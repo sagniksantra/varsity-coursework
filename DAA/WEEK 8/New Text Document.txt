@@ -1,0 +1,197 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+const int MAX_TEAMS = 100;
+const int MAX_MODULES = 100;
+
+int adj[MAX_MODULES][MAX_MODULES];
+int visited[MAX_MODULES];
+int indegree[MAX_MODULES];
+int n, m;
+
+// Function to add an edge between two modules
+void addEdge(int u, int v) {
+    adj[u][v] = 1;
+    indegree[v]++;
+}
+
+// Function to print the schedule of tasks
+void printSchedule(int schedule[]) {
+    cout << "The schedule of tasks is: ";
+    for (int i = 0; i < n; ++i) {
+        cout << schedule[i] << " ";
+    }
+    cout << endl;
+}
+
+// Function to find the next independent module
+int getNextIndependent() {
+    for (int i = 0; i < n; ++i) {
+        if (!visited[i] && indegree[i] == 0) {
+            visited[i] = 1;
+            return i;
+        }
+    }
+    return -1;
+}
+
+// Function to generate the schedule of tasks
+void generateSchedule() {
+    int schedule[MAX_MODULES];
+    int i = 0;
+
+    // Find and add all independent modules to the schedule
+    while (i < n) {
+        int j = getNextIndependent();
+        if (j == -1) {
+            cout << "Error: No independent module found!" << endl;
+            return;
+        }
+        schedule[i++] = j;
+        for (int k = 0; k < n; ++k) {
+            if (adj[j][k]) {
+                indegree[k]--;
+            }
+        }
+    }
+    printSchedule(schedule);
+}
+
+int main() {
+    cout << "Enter the number of modules: ";
+    cin >> n;
+    cout << "Enter the number of teams: ";
+    cin >> m;
+    memset(adj, 0, sizeof(adj));
+    memset(visited, 0, sizeof(visited));
+    memset(indegree, 0, sizeof(indegree));
+
+    // Add dependencies between modules based on team assignments
+    for (int i = 0; i < m; ++i) {
+        int num, u, v;
+        cout << "Enter the number of dependent modules for team " << i+1 << ": ";
+        cin >> num;
+        cout << "Enter the dependent modules for team " << i+1 << ": ";
+        cin >> u;
+        for (int j = 1; j < num; ++j) {
+            cin >> v;
+            addEdge(u, v);
+            u = v;
+        }
+    }
+
+    // Generate the schedule of tasks
+    generateSchedule();
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+const int MAX_TEAMS = 100;
+const int MAX_MODULES = 100;
+
+int adj[MAX_MODULES][MAX_MODULES];
+int visited[MAX_MODULES];
+int indegree[MAX_MODULES];
+int n, m;
+
+// Function to add an edge between two modules
+void addEdge(int u, int v) {
+    adj[u][v] = 1;
+    indegree[v]++;
+}
+
+// Function to print the schedule of tasks
+void printSchedule(int schedule[]) {
+    cout << "The schedule of tasks is: ";
+    for (int i = 0; i < n; ++i) {
+        cout << schedule[i] << " ";
+    }
+    cout << endl;
+}
+
+// Function to find the next independent module
+int getNextIndependent() {
+    for (int i = 0; i < n; ++i) {
+        if (!visited[i] && indegree[i] == 0) {
+            visited[i] = 1;
+            return i;
+        }
+    }
+    return -1;
+}
+
+// Function to generate the schedule of tasks
+void generateSchedule() {
+    int schedule[MAX_MODULES];
+    int i = 0;
+
+    // Find and add all independent modules to the schedule
+    while (i < n) {
+        int j = getNextIndependent();
+        if (j == -1) {
+            cout << "Error: No independent module found!" << endl;
+            return;
+        }
+        schedule[i++] = j;
+        for (int k = 0; k < n; ++k) {
+            if (adj[j][k]) {
+                indegree[k]--;
+            }
+        }
+    }
+    printSchedule(schedule);
+}
+
+int main() {
+    cout << "Enter the number of modules: ";
+    cin >> n;
+    cout << "Enter the number of teams: ";
+    cin >> m;
+    
+    // Initialize arrays
+    for (int i = 0; i < MAX_MODULES; ++i) {
+        for (int j = 0; j < MAX_MODULES; ++j) {
+            adj[i][j] = 0;
+        }
+        visited[i] = 0;
+        indegree[i] = 0;
+    }
+
+    // Add dependencies between modules based on team assignments
+    for (int i = 0; i < m; ++i) {
+        int num, u, v;
+        cout << "Enter the number of dependent modules for team " << i+1 << ": ";
+        cin >> num;
+        cout << "Enter the dependent modules for team " << i+1 << ": ";
+        cin >> u;
+        for (int j = 1; j < num; ++j) {
+            cin >> v;
+            addEdge(u, v);
+            u = v;
+        }
+    }
+    
+    // Check for task dependencies between teams
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (adj[i][j]) {
+                for (int k = 0; k < m; ++k) {
+                    if (adj[k*n+i][k*n+j]) {
+                        cout << "Error: Task " << i << " assigned to team " << k+1 << " depends on task " << j << " assigned to the same team!" << endl;
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Generate the schedule of tasks
+    generateSchedule();
+
+    return 0;
+}
