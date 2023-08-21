@@ -2,37 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Timetable</title>
+    <title>DSE A - TimeTable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Montserrat&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="flex flex-col">
-        <div class="grid grid-cols-6 gap-4">
-          <div class="font-bold">Day/Time</div>
-          <div class="font-bold">9:00-10:30</div>
-          <div class="font-bold">10:30-12:00</div>
-          <div class="font-bold">12:30-2:00</div>
-          <div class="font-bold">2:00-3:30</div>
-          <div class="font-bold">3:30-5:00</div>
-        </div>
-        <div class="grid grid-cols-6 gap-4">
-          <div>Monday</div>
-          <div class="bg-red-500 text-white">DL</div>
-          <div class="bg-yellow-500 text-white">NLP</div>
-          <div class="bg-green-500 text-white">CC</div>
-          <div class="bg-blue-500 text-white">OS*</div>
-          <div></div>
-        </div>
-        <div class="grid grid-cols-6 gap-4">
-          <div>Tuesday</div>
-          <div class="bg-red-500 text-white">DL*</div>
-          <div class="bg-yellow-500 text-white">NLP*</div>
-          <div></div>
-          <div class="bg-green-500 text-white">CC*</div>
-          <div></div>
-        </div>
-        <!-- Add more rows as needed -->
-      </div>      
+<body class="font-nunito text-center">
+    <h1 class="text-4xl mt-10 font-borel">Timetable</h1>
+    <div class="flex justify-center items-center mt-10">
+        <table class="max-w-90 w-full h-400 border-collapse border border-black shadow-md transition-transform transform scale-100">
+            <tr class="h-15">
+                <th class="w-8 bg-yellow"></th>
+                <th class="w-10">08:00 - 09:00</th>
+                <th class="w-10">09:00 - 10:00</th>
+                <th class="w-6">10:00 - 10:30</th>
+                <th class="w-10">10:30 - 11:30</th>
+                <th class="w-10">11:30 - 12:30</th>
+                <th class="w-10">12:30 - 01:00</th>
+                <th class="w-10">01:00 - 02:00</th>
+                <th class="w-10">02:00 - 03:00</th>
+                <th class="w-6">03:00 - 03:30</th>
+                <th class="w-10">03:30 - 04:30</th>
+            </tr>
+            <tr>
+                <th class="bg-yellowgreen">MON</th>
+                <td>-</td>
+                <td colspan="3" class="text-whitesmoke font-semibold italic">DL Lab6 - A2</td>
+                <td colspan="2" class="bg-green-300">Lunch Break</td>
+                <td>Cloud Computing</td>
+                <td>Operating Systems</td>
+                <td class="bg-purple-200">Break</td>
+                <td class="bg-blue-500 text-white">Natural Language Processing*</td>
+            </tr>
+            <tr>
+                <th class="bg-yellowgreen">TUE</th>
+                <td>Maths</td>
+                <td>Natural Language Processing</td>
+                <td class="bg-purple-200">Break</td>
+                <td>Cloud Computing</td>
+                <td>Deep Learning</td>
+                <td colspan="2" class="bg-green-300">Lunch Break</td>
+                <td colspan="3" class="text-whitesmoke font-semibold italic">WT Lab4 - A1</td>
+            </tr>
+            <tr>
+                <th class="bg-yellowgreen">WED</th>
+                <td>-</td>
+                <td colspan="3" class="text-whitesmoke font-semibold italic">WT Lab4 - A2</td>
+                <td colspan="2" class="bg-green-300">Lunch Break</td>
+                <td>Deep Learning</td>
+                <td>Maths</td>
+                <td class="bg-purple-200">Break</td>
+                <td>Natural Language Processing</td>
+            </tr>
+            <tr>
+                <th class="bg-yellowgreen">THU</th>
+                <td class="bg-blue-500 text-white">Cloud Computing*</td>
+                <td>Deep Learning</td>
+                <td class="bg-purple-200">Break</td>
+                <td>Operating Systems</td>
+                <td>-</td>
+                <td colspan="2" class="bg-green-300">Lunch Break</td>
+                <td colspan="3" class="text-whitesmoke font-semibold italic">OS Lab1 - A2</td>
+            </tr>
+            <tr>
+                <th class="bg-yellowgreen">FRI</th>
+                <td>-</td>
+                <td colspan="3" class="text-whitesmoke font-semibold italic">OS Lab3 - A2</td>
+                <td colspan="2" class="bg-green-300">Lunch Break</td>
+                <td>Natural Language Processing</td>
+                <td>Cloud Computing</td>
+                <td class="bg-purple-200">Break</td>
+                <td>Deep Learning</td>
+            </tr>
+            <tr>
+                <th class="bg-yellowgreen">SAT</th>
+                <td>Operating Systems</td>
+                <td class="bg-blue-500 text-white">Operating Systems*</td>
+                <td class="bg-purple-200">Break</td>
+                <td>Maths</td>
+                <td class="bg-blue-500 text-white">Deep Learning*</td>
+                <td colspan="2" class="bg-green-300">Lunch Break</td>
+                <td colspan="3" class="text-whitesmoke font-semibold italic">DL Lab6 - A1</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
