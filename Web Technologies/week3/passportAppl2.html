@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration | Passport Seva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Borel&family=Montserrat&family=Raleway:wght@500&display=swap" rel="stylesheet">
+</head>
+<body >
+    <div class="header" style="display: flex; 
+                        justify-content: center; 
+                        align-items: center;
+                        border: 1px solid black;" >
+        <img 
+            style="height: 100px; width: 100px;" 
+            src="emblem.jpg" 
+            alt="">
+                <h1 style="font-size: 50px; font-family: 'Raleway', sans-serif;
+                ">PASSPORT SEVA</h1>
+    </div>
+    <h1>User Registration</h1>
+    <p style="font-size: 20px;"><b>Important Information:</b>Passport application can be processed at any PSK/POPSK/PSLK WITHIN INDIA irrespective of your residential address.</p>
+    <ul>
+        <li style="font-size: 17px;"><a href="https://portal1.passportindia.gov.in/AppOnlineProject/online/apptAvailStatus">Click here</a> to check the appointment availability at all PSK/POPSK/PSLK.</li>
+        <li style="font-size: 17px;"><a href="https://portal2.passportindia.gov.in/AppOnlineProject/pdf/CIR_0186917_Y.pdf">Click here</a> to know more about Apply Anywhere in India scheme for Passport Services.</li>
+    </ul>
+
+    <form action="">
+        <table cellpadding="3" cellspacing="0" width="100%">
+			<tbody>
+                <tr>
+				    <td colspan="3"></td>
+				</tr>
+			    <tr>
+				    <td colspan="2">
+					<fieldset style="display:inline; border:none;">
+					<legend style="width:164px;float:left;text-align:left;margin-left:-2px;color:#000;">
+					Register to apply at*</legend>
+					<span style="float:left;width:150px; margin: -15px 0 0 40px;">
+					<br><input type="radio" name="cpvLocation" id="cpvLocation13" value="13" onclick="alertDiplForm(this)"><label for="cpvLocation13">CPV Delhi</label>
+<br><input type="radio" name="cpvLocation" id="cpvLocationPO" checked="checked" value="PO" onclick="alertDiplForm(this)"><label for="cpvLocationPO">Passport Office</label>
+<div id="wwgrp_cpvLocation" class="wwgrp">
+<div id="wwctrl_cpvLocation" class="wwctrl">
+</div> </div>
+
+					</span>	
+				</fieldset>
+				</td>
+				<td>
+					<span style="font-size: 10px;">Select the 'CPV Delhi' option to apply for Diplomatic/Official passport at Consular, Passport and Visa (CPV) division, Delhi.</span>
+					</td>
+			</tr>	
+			<tr id="poBlock" style="null">
+				<td width="30%">
+					<span style="display: block;"><label for="dcdrLocation">Passport Office <span class="mandatory">*</span></label>&nbsp;</span>
+					<span style="font-size:10px">(As per Present Residential Address)</span>
+				</td>
+				<td>
+				
+					<select name="dcdrLocation" id="dcdrLocation" class="dropdown-box" aria-describedby="tibDesc" aria-required="true">
+    <option value="">----- Select -----</option>
+    <option value="1">Ahmedabad</option>
+    <option value="2">Amritsar</option>
+    <option value="4">Bareilly</option>
+    <option value="5">Bengaluru</option>
+    <option value="7">Bhopal</option>
+    <option value="3">Bhubaneswar</option>
+    <option value="10">Chandigarh</option>
+    <option value="26">Chennai</option>
+    <option value="11">Cochin</option>
+    <option value="9">Coimbatore</option>
+    <option value="14">Dehradun</option>
+    <option value="15">Delhi</option>
+    <option value="18">Ghaziabad</option>
+    <option value="16">Goa</option>
+    <option value="17">Guwahati</option>
+    <option value="19">Hyderabad</option>
+    <option value="23">Jaipur</option>
+    <option value="21">Jalandhar</option>
+    <option value="22">Jammu</option>
+    <option value="8">Kolkata</option>
+    <option value="24">Kozhikode</option>
+    <option value="25">Lucknow</option>
+    <option value="27">Madurai</option>
+    <option value="6">Mumbai</option>
+    <option value="29">Nagpur</option>
+    <option value="30">Patna</option>
+    <option value="31">Pune</option>
+    <option value="33">Raipur</option>
+    <option value="32">Ranchi</option>
+    <option value="35">Shimla</option>
+    <option value="34">Srinagar</option>
+    <option value="36">Surat</option>
+    <option value="38">Tiruchirappalli</option>
+    <option value="39">Trivandrum</option>
+    <option value="321">Vijayawada</option>
+    <option value="40">Visakhapatnam</option>
+
+
+</select>
+<div id="wwgrp_dcdrLocation" class="wwgrp">
+<div id="wwctrl_dcdrLocation" class="wwctrl">
+</div> </div>
+
+					<span class="hide" id="tibDesc">Tibetan Refugees applying for Identity Certificate must register with 'Delhi' Passport Office.</span>
+					
+				</td>
+				<td style="font-size: 10px;">
+					  Tibetan Refugees applying for Identity Certificate must register with 'Delhi' Passport Office.
+					 </td>
+			</tr>
+
+			<tr>
+				<td width="30%">
+					<label for="givenName">Given Name&nbsp;<span style="font-size:10px">(Max 45 Characters)</span><span class="mandatory">*</span></label>
+				</td>
+				<td width="27%"><input type="text" name="givenName" maxlength="45" value="" id="givenName" class="txtbox" onblur="validateName(this.value);" aria-describedby="nameDesc" aria-required="true"><div id="wwgrp_givenName" class="wwgrp">
+<div id="wwctrl_givenName" class="wwctrl">
+</div> </div>
+
+					<span class="hide" id="nameDesc">First Name + Middle NameInitials and honorifics (e.g. Dr.,Col.,etc.) are not allowed.</span>
+					
+				</td>
+				<td style="font-size: 10px;">
+					<strong>First Name + Middle Name</strong>
+                   	<br>Initials and honorifics (e.g. Dr.,Col.,etc.) are not allowed.
+				</td>
+ 			</tr>
+
+			<tr>
+				<td><label for="surname">Surname&nbsp;<span style="font-size:10px">(Max 45 Characters)</span></label></td>
+				<td colspan="2"><input type="text" name="surname" maxlength="45" value="" id="surname" class="txtbox" onblur="validateSurname(this.value);" aria-describedby="surnameDesc"><div id="wwgrp_surname" class="wwgrp">
+<div id="wwctrl_surname" class="wwctrl">
+</div> </div>
+
+					<span class="hide" id="surnameDesc"></span>
+					
+				</td>
+			</tr>
+	 		
+			<tr>
+				<td><label for="dob">Date of Birth (DD/MM/YYYY)<span class="mandatory">*</span></label></td>
+				<td colspan="2">
+					
+					
+						<input type="text" name="dob" maxlength="10" value="DD/MM/YYYY" id="dob" class="txtbox hasDatepicker" onclick="clickclear(this, 'DD/MM/YYYY')" onfocus="this.style.color='#000000'" onblur="clickrecall(this,'DD/MM/YYYY');validateDate(this.value);" onkeyup="clickclear(this, 'DD/MM/YYYY')" onchange="clickrecall(this,'DD/MM/YYYY')" autocomplete="off" aria-describedby="dateformatDesc" aria-required="true"><img class="ui-datepicker-trigger" src="/AppOnlineProject/images/ico_cal.gif" alt="..." title="..." style="cursor: pointer; vertical-align: middle;"><div id="wwgrp_dob" class="wwgrp">
+<div id="wwctrl_dob" class="wwctrl">
+</div> </div>
+
+						<span class="hide" id="dateformatDesc">(provide date in DD/MM/YYYY format)</span>
+						
+			    	 
+				</td>
+ 			</tr>
+
+			<tr>
+					<td><label for="email">E-mail Id<span style="font-size:10px">&nbsp;(Max 35 Characters)</span><span class="mandatory">*</span></label></td>
+					<td colspan="2">
+						<input type="text" name="email" maxlength="35" value="" id="email" class="txtbox" onblur="blah3(this.value);" aria-describedby="emailError" aria-required="true"><div id="wwgrp_email" class="wwgrp">
+<div id="wwctrl_email" class="wwctrl">
+</div> </div>
+
+						<span class="hide" id="emailError"></span>
+					</td>
+				</tr>
+			<tr>
+			<td colspan="3">
+			<fieldset style="display:inline; border:none;">
+			<legend style="line-height:15px;float:left;text-align:right;margin-left:-2px;color:#000;">Do you want your Login Id<br>to be same as E-mail Id?</legend>
+   				
+					<span style="float:left;width:150px;margin: 0 0 0 67px"><input type="radio" name="emailloginSame" id="emailloginSameyes" value="yes" onclick="blah(this.value)"><label for="emailloginSameyes">Yes</label>
+<input type="radio" name="emailloginSame" id="emailloginSameno" checked="checked" value="no" onclick="blah(this.value)"><label for="emailloginSameno">No</label>
+<div id="wwgrp_emailloginSame" class="wwgrp">
+<div id="wwctrl_emailloginSame" class="wwctrl">
+</div> </div>
+
+</span>	
+					 <span class="hide" id="emailloginSameError"></span>
+			
+			</fieldset>
+			</td>
+			</tr>
+			<tr>
+			<td>
+				<input type="submit" id="checkLogin" name="action:UserRegistrationActionDBAuth!validateLogin" value="Check Availability Hidden Button" onclick="txtFocus();" style="display: none;">
+
+				</td>
+			</tr>				
+
+			<tr>
+				<td><label for="loginId">Login Id<span class="mandatory">*</span></label></td>
+				<td>
+					<input type="text" name="loginId" maxlength="35" value="" id="loginId" class="txtbox" onblur="validateLoginId(this.value); " aria-describedby="loginIdError" aria-required="true"><div id="wwgrp_loginId" class="wwgrp">
+<div id="wwctrl_loginId" class="wwctrl">
+</div> </div>
+
+					<span class="mandatory"></span>
+					<span class="success"></span>
+					<span class="hide" id="loginIdError"></span>
+				</td>
+				<td>
+					<a href="javascript:document.getElementById('checkLogin').click()" title="Check Availability" onclick="return checkSpecialChar();">Check Availability</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label for="pwd">Password<span class="mandatory">*</span></label></td>
+				<td>
+					<input type="password" name="pwd" maxlength="14" id="pwd" class="txtbox" onblur="validatePassword(this.value)" aria-describedby="pwdError" aria-required="true"><div id="wwgrp_pwd" class="wwgrp">
+<div id="wwctrl_pwd" class="wwctrl">
+</div> </div>
+
+						<span class="hide" id="pwdError"></span>
+				</td>
+				<td><a href="javascript:;" onclick="window.open('/AppOnlineProject/onlineHtml/passwordPolicy.html','myWin','scrollbars=no,width=500,height=150');" title="Password Policy">Password Policy</a></td>
+			</tr>
+
+			<tr>
+				<td><label for="confirmPwd">Confirm Password<span class="mandatory">*</span></label></td>
+				<td colspan="2">
+					<input type="password" name="confirmPwd" maxlength="14" id="confirmPwd" class="txtbox" onblur="validateConfirmPassword(this.value)" aria-describedby="confirmPwdError" aria-required="true"><div id="wwgrp_confirmPwd" class="wwgrp">
+<div id="wwctrl_confirmPwd" class="wwctrl">
+</div> </div>
+
+					 <span class="hide" id="confirmPwdError"></span>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><label for="hintQues">Hint Question<span class="mandatory">*</span></label></td>
+				<td colspan="2">
+					
+					
+		              <select name="hintQues" id="hintQues" class="dropdown-box" title="Hint Question will help in password recovery, if you forget your password." onblur="validateHintQues(this.value);" aria-describedby="hintQuesError" aria-required="true">
+    <option value="">----- Select -----</option>
+    <option value="Birth City">Birth City</option>
+    <option value="Colour">Favourite Colour</option>
+    <option value="Favourite Cricketer">Favourite Cricketer</option>
+    <option value="Favourite Food">Favourite Food</option>
+    <option value="First School">First School</option>
+    <option value="Make of First car Owned">Make of First car Owned</option>
+    <option value="Mother's Maiden Name">Mother's Maiden Name</option>
+
+
+</select>
+<div id="wwgrp_hintQues" class="wwgrp">
+<div id="wwctrl_hintQues" class="wwctrl">
+</div> </div>
+
+						<span class="hide" id="hintQuesError"></span> 
+					
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><label for="hintAns">Hint Answer<span class="mandatory">*</span></label></td>
+				<td colspan="2">
+					<input type="password" name="hintAns" maxlength="35" id="hintAns" class="txtbox" title="Hint Answer will be required for password recovery, if you forget your password." onblur="validateHintAns(this.value);" aria-describedby="hintAnsError" aria-required="true"><div id="wwgrp_hintAns" class="wwgrp">
+<div id="wwctrl_hintAns" class="wwctrl">
+</div> </div>
+
+						<span class="hide" id="hintAnsError"></span>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label for="test123">Enter Characters Displayed <span class="mandatory">*</span></label></td>
+				
+				<td colspan="1">
+					<img width="185" src="/AppOnlineProject/PspTest01Captcha09S.awsti?x=1692157153072" id="captcha" alt="Captcha" title="Enter Captcha"><br>
+					
+					     
+                          
+				</td>
+				<td>
+                          
+                          
+                          <audio controls="" id="audcap" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                          <audio controls="" id="audcap1" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                          <audio controls="" id="audcap2" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                          <audio controls="" id="audcap3" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                          <audio controls="" id="audcap4" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                          <audio controls="" id="audcap5" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                          <audio controls="" id="audcap6" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                            <audio controls="" id="audcap7" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                            <audio controls="" id="audcap8" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                            <audio controls="" id="audcap9" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                            <audio controls="" id="audcap10" style="display: none;">
+                             <source src="/AppOnlineProject/Audios/8.mp3" type="audio/mpeg">
+                          </audio>
+                          
+                         <img src="/AppOnlineProject/images/refresh.png" id="refreshImg" alt="Change the picture displayed" title="Change the picture displayed " style="cursor: pointer;width: 23px;" onclick=" document.getElementById('captcha').src = document.getElementById('captcha').src + '?' + (new Date()).getMilliseconds()"> 
+                         <br><img src="/AppOnlineProject/images/audio.png" id="audCaptcha" alt="Audio captcha" title="Click this button to listen to a sound based captcha" style="cursor: pointer;margin-top: 11px;width: 27px;" onclick="getAudioCaptcha();">
+                         <img src="/AppOnlineProject/images/audio.png" id="audCaptchaDup" alt="Audio captcha" title="Click this button to listen to a sound based captcha" style="margin-top: 11px;width: 27px;display:none;">
+                         
+                        
+                        </td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;</td>
+				<td colspan="2"><input type="text" name="test123" value="" id="test123" class="txtbox" onblur="validateCaptcha(this.value);" aria-describedby="testError" aria-required="true"><div id="wwgrp_test123" class="wwgrp">
+<div id="wwctrl_test123" class="wwctrl">
+</div> </div>
+
+				<span class="hide" id="testError"></span>
+				</td>
+			</tr>
+			</tbody></table>
+    </form>
+</body>
+
+
+</html>
