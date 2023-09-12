@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle Extinguishing Animation</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Keyframes for the extinguishing animation */
+        @keyframes extinguish {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        /* Styling for the candle */
+        .candle {
+            width: 100px;
+            height: 200px;
+            background-color: #FFD700; /* Candle color */
+            position: relative;
+            border-radius: 10px;
+            z-index: 1; /* Ensure the candle is below the flame */
+        }
+
+        /* Styling for the flame */
+        .flame {
+            width: 40px;
+            height: 60px;
+            background-color: #FF6600; /* Flame color */
+            position: absolute;
+            bottom: 200px;
+            left: 30px;
+            border-radius: 50%;
+            animation: extinguish 10s ease-in-out forwards; /* Apply the extinguish animation */
+            z-index: 2; /* Ensure the flame is above the candle */
+        }
+    </style>
+</head>
+<body>
+    <div class="h-screen flex justify-center items-center">
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+    </div>
+</body>
+</html>

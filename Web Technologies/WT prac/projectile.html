@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Animation</title>
+    <style>
+        /* Styling for the projectile */
+        .projectile {
+            width: 20px;
+            height: 20px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            animation: projectileMotion 3s linear infinite;
+            top: 50%;
+        }
+
+        /* Keyframes for the projectile motion */
+        @keyframes projectileMotion {
+            0% {
+                left: 0;
+                top: 100px;
+                transform: translateX(0) translateY(0);
+            }
+            25% {
+                left: 200px;
+                top: 0;
+                transform: translateX(200px) translateY(-100px);
+            }
+            50% {
+                left: 400px;
+                top: 100px;
+                transform: translateX(400px) translateY(0);
+            }
+            75% {
+                left: 600px;
+                top: 200px;
+                transform: translateX(600px) translateY(100px);
+            }
+            100% {
+                left: 800px;
+                top: 100px;
+                transform: translateX(800px) translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="projectile"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Dribbling Animation</title>
+    <style>
+        /* Styling for the basketball */
+        .basketball {
+            width: 100px;
+            height: 100px;
+            background-color: #FF6600;
+            border-radius: 50%;
+            position: absolute;
+            animation: bounce 2s linear infinite;
+        }
+
+        /* Keyframes for the bounce animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100px);
+            }
+        }
+
+        /* Styling for the ground */
+        .ground {
+            width: 100%;
+            height: 10px;
+            background-color: #4CAF50;
+            position: absolute;
+            bottom: 0;
+        }
+        .container {
+            width: 100%;
+            height: 50vh;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="basketball"></div>
+        <div class="ground"></div>
+    </div>
+</html>

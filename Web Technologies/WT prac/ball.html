@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Animation</title>
+    <style>
+        /* Styling for the container */
+        .container {
+            width: 400px;
+            height: 200px;
+            position: relative;
+            border: 2px solid #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styling for the balls */
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            animation-timing-function: linear;
+        }
+
+        /* Keyframes for the animation */
+        @keyframes moveBall1 {
+            0% { left: 0; }
+            50% { left: 150px; }
+            100% { left: 150px; }
+        }
+
+        @keyframes moveBall2 {
+            0% { left: 150px; }
+            50% { left: 150px; }
+            100% { left: 300px; }
+        }
+
+        /* Apply the animations to the balls */
+        .ball1 {
+            animation: moveBall1 2s linear forwards, stop 0.1s 2s forwards;
+        }
+
+        .ball2 {
+            animation: moveBall2 2s linear forwards 2s;
+        }
+
+        /* Keyframe to stop the first ball */
+        @keyframes stop {
+            to { left: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball ball1"></div>
+        <div class="ball ball2"></div>
+    </div>
+</body>
+</html>

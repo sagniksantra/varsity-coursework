@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes move {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .shadow {
+            animation: move 10s infinite linear;
+        }
+    </style>
+</head>
+<body class="bg-black flex items-center justify-center h-screen m-0">
+    <div class="moon relative w-48 h-48 rounded-full bg-white">
+        <div class="shadow absolute w-full h-full rounded-full bg-black"></div>
+    </div>
+</body>
+</html>
