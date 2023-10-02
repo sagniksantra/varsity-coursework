@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded p-8 shadow-md w-96">
+        <h1 class="text-2xl font-semibold mb-4">Number Guessing Game</h1>
+        <p class="mb-4">Guess a number between 1 and 100. You have 5 tries.</p>
+        <input type="text" id="guess" class="border rounded px-2 py-1 mb-2" placeholder="Enter your guess">
+        <button onclick="checkGuess()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit Guess</button>
+        <p id="message" class="mt-4"></p>
+    </div>
+
+    <script>
+        // Generate a random number between 1 and 100
+        const targetNumber = Math.floor(Math.random() * 100) + 1;
+
+        let tries = 5;
+
+        function checkGuess() {
+            const guessInput = document.getElementById("guess");
+            const guess = parseInt(guessInput.value);
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                setMessage("Please enter a valid number between 1 and 100.");
+                return;
+            }
+
+            tries--;
+
+            if (guess === targetNumber) {
+                setMessage(`Congratulations! You've guessed the correct number (${targetNumber}). You win!`);
+                disableInput();
+            } else {
+                if (tries === 0) {
+                    setMessage(`Sorry, you've run out of tries. The correct number was ${targetNumber}. You lose.`);
+                    disableInput();
+                } else {
+                    const hint = guess < targetNumber ? "higher" : "lower";
+                    setMessage(`Incorrect. Try again. You have ${tries} ${tries === 1 ? 'try' : 'tries'} left. Guess ${hint}.`);
+                }
+            }
+
+            guessInput.value = "";
+        }
+
+        function setMessage(message) {
+            const messageElement = document.getElementById("message");
+            messageElement.textContent = message;
+        }
+
+        function disableInput() {
+            const guessInput = document.getElementById("guess");
+            const submitButton = document.querySelector("button");
+            guessInput.disabled = true;
+            submitButton.disabled = true;
+        }
+    </script>
+</body>
+</html>

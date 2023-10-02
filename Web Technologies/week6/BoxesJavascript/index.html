@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+        function Warn() {
+            alert("This is a warning message!");
+            document.write("This is a warning message!");
+        }
+
+        function getConfirmation() {
+            var retVal = confirm("Do you want to continue ?");
+            if (retVal == true) {
+                document.write("User wants to continue!");
+                return true;
+            } else {
+                document.write("User does not want to continue!");
+                return false;
+            }
+        }
+
+
+        function getValue() {
+            var retVal = prompt("Enter your name : ", "your name here");
+            document.write("You have entered : " + retVal);
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="inner-wrapper">
+
+
+            <!-- alert dialog box  -->
+            <div class="alert-box">
+                <h3 style="margin:1rem 0rem">Alert Dialog Box</h3>
+
+                <p>A confirmation dialog box is mostly used to take user's consent on any option. It displays a dialog
+                    box with two buttons: OK and Cancel.
+
+                    If the user clicks on the OK button, the window method confirm() will return true. If the user
+                    clicks on the Cancel button, then confirm() returns false. You can use a confirmation dialog box as
+                    follows</p>
+
+                <p>Click the following button to see the result: </p>
+                <form>
+                    <input type="button" value="Click Me" onclick="Warn();"
+                        style="color:black; padding:0.3rem 0.8rem; margin:1rem 0rem" />
+                </form>
+            </div>
+
+            <!-- confirmation dialog box  -->
+            <div class="confirmation-box">
+
+                <h3 style="margin:1rem 0rem">Confirmation Dialog Box</h3>
+
+                <p>A confirmation dialog box is mostly used to take user's consent on any option. It displays a dialog
+                    box with two buttons: OK and Cancel.
+
+                    If the user clicks on the OK button, the window method confirm() will return true. If the user
+                    clicks on the Cancel button, then confirm() returns false. You can use a confirmation dialog box as
+                    follows</p>
+
+                <p>Click the following button to see the result: </p>
+                <form>
+                    <input type="button" value="Click Me" onclick="getConfirmation();"
+                        style="color:black; padding:0.3rem 0.8rem; margin:1rem 0rem" />
+                </form>
+
+            </div>
+
+
+            <!-- prompt doalog box  -->
+            <div class="prompt-box">
+
+
+
+                <h3 style="margin:1rem 0rem">Alert Dialog Box</h3>
+
+                <p>The prompt dialog box is very useful when you want to pop-up a text box to get user input. Thus, it
+                    enables you to interact with the user. The user needs to fill in the field and then click OK.
+
+                    This dialog box is displayed using a method called prompt() which takes two parameters: (i) a label
+                    which you want to display in the text box and (ii) a default string to display in the text box.
+
+                    This dialog box has two buttons: OK and Cancel. If the user clicks the OK button, the window method
+                    prompt() will return the entered value from the text box. If the user clicks the Cancel button, the
+                    window method prompt() returns null.</p>
+
+                <p>Click the following button to see the result: </p>
+                <form>
+                    <input type="button" value="Click Me" onclick="getValue();"
+                        style="color:black; padding:0.3rem 0.8rem; margin:1rem 0rem" />
+                </form>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
